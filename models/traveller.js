@@ -2,16 +2,22 @@ const Traveller = function(journeys) {
   this.journeys = journeys;
 };
 
-Traveller.prototype.getJourneyStartLocations = function() {
-
+Traveller.prototype.getJourneyStartLocations = function () {
+  return this.journeys.map((journeys) =>{
+    return journeys.startLocation;
+  });
 };
 
 Traveller.prototype.getJourneyEndLocations = function () {
-
+  return this.journeys.map((journeys) =>{
+    return journeys.endLocation;
+});
 };
 
 Traveller.prototype.getJourneysByTransport = function (transport) {
-
+  return this.journeys.filter((journey) => {
+    return journey.transport === transport;
+});
 };
 
 Traveller.prototype.getJourneysByMinDistance = function (minDistance) {

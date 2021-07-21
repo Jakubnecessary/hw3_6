@@ -27,7 +27,8 @@ describe('Traveller', function() {
     assert.deepStrictEqual(actual, journeys);
   });
 
-  xit('should be able to get the journeys start locations', function() {
+  it('should be able to get the journeys start locations', function() {
+    const actual = traveller.getJourneyStartLocations();
     const expected = [
       journey1.startLocation,
       journey2.startLocation,
@@ -38,7 +39,8 @@ describe('Traveller', function() {
     assert.deepStrictEqual(traveller.getJourneyStartLocations(), expected);
   });
 
-  xit('should be able to get the journeys end locations', function() {
+  it('should be able to get the journeys end locations', function() {
+    const actual = traveller.getJourneyEndLocations();
     const expected = [
       journey1.endLocation,
       journey2.endLocation,
@@ -51,8 +53,8 @@ describe('Traveller', function() {
 
   xit('should be able to get journeys by transport', function() {
     const expected = [
-      journey1,
-      journey2
+      journey1.transport,
+      journey2.transport,
     ];
     assert.deepStrictEqual(traveller.getJourneysByTransport('train'), expected);
   });
